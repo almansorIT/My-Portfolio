@@ -1,0 +1,54 @@
+name: Azure-CI-CD
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "*"
+      - ".github/workflows/Azure-CI-CD.yml"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Prepare artifact for deployment
+        run: |
+          mkdir -p deploy
+          # Copy standalone server + minimal node_modules
+          cp -r .next/standalone/. deploy/
+          # Copy required static assets (must sit beside server.js)
+          cp -r .next/static deploy/.next/static
+          cp -r public deploy/public
+
+      - name: Verify deployment artifact
+        run: |
+          test -f deploy/server.js
+          test -d deploy/node_modules
+          test -d deploy/public
+          test -d deploy/.next/static
+          echo "Artifact structure:"
+          find deploy -maxdepth 2 -type d
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: Almansoor-IT
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_Almansoor }}
+          package: deploy
+          clean: true
