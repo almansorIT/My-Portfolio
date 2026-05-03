@@ -51,4 +51,3 @@ jobs:
           app-name: Almansoor-IT
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_Almansoor }}
           package: deploy
-          startup-command: node server.js
