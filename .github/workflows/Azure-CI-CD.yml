@@ -21,7 +21,12 @@ jobs:
         with:
           node-version: 24
 
-   
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
       - name: Prepare artifact for deployment
         run: |
           mkdir -p deploy
