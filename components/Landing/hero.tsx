@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const roles = [
@@ -70,7 +71,10 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 w-full">
-        <div className="max-w-3xl">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+
+          {/* ── Text content ── */}
+          <div className="flex-1 max-w-2xl">
           {/* Greeting label */}
           <p
             className="text-cyan-400 text-sm font-mono font-medium tracking-widest uppercase mb-6 animate-fade-in-up"
@@ -152,6 +156,23 @@ export default function Hero() {
             </span>
             <div className="w-px h-12 bg-gradient-to-b from-slate-600 to-transparent ml-0.5" />
           </div>
+          </div>{/* end text content */}
+
+          {/* ── Avatar ── */}
+          <div
+            className="flex-shrink-0 flex justify-center md:justify-end animate-fade-in-up"
+            style={{ animationDelay: '0.12s' }}
+          >
+            <Image
+              src="/assets/photo_2026.webp"
+              alt="Almansoor Mukhawi"
+              width={208}
+              height={208}
+              priority
+              className="rounded-full object-cover w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 shadow-lg shadow-cyan-900/40 border border-slate-700"
+            />
+          </div>
+
         </div>
       </div>
     </section>
