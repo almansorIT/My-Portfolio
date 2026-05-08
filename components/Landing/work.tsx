@@ -21,39 +21,39 @@ const ExternalLinkIcon = () => (
 
 const projects = [
   {
-    title: 'Cloud-Native API Platform',
+    title: 'SecureDotNetApp',
     description:
-      'Production-grade REST API built with ASP.NET Core, featuring JWT authentication, MongoDB Atlas, Redis caching, and Kubernetes deployment.',
-    tags: ['ASP.NET Core', 'C#', 'MongoDB', 'Redis', 'Docker', 'K8s'],
+      'Production-ready ASP.NET Core web application that serves as a reference implementation for secure, modern web development. It demonstrates best practices across authentication, authorization, input validation, transport security, and clean architecture, while remaining fully functional and testable.',
+    tags: ['OWASP Top 10', 'CSRF', 'Bcrypt', 'Argon2', 'RBAC', 'JWT', 'HTTPS'],
     github: 'https://github.com/almansorIT',
-    demo: '#',
+    demo: 'https://github.com/almansorIT/SecureDotNetApp',
     featured: true,
   },
   {
-    title: 'Multi-Tenant SaaS Dashboard',
+    title: 'ShopLine',
     description:
-      'Full-stack SaaS application with a Blazor frontend and ASP.NET Core backend, implementing clean architecture and CQRS patterns.',
-    tags: ['Blazor', 'C#', 'MySQL', 'Clean Arch', 'Azure'],
+      'Microservices e-commerce platform using Vertical Slice Architecture, Clean architecture, Gateway, BFF. built with ASP.NET Core, featuring a Blazor WebAssembly frontend, RESTful APIs, and MySQL databases. It implements clean architecture principles and is deployed on Azure for scalability and reliability.',
+    tags: ['MySQL', 'Clean Arch', 'MongoDb', 'Azure','Microservices','Next.js','Blazor', 'Gateway', 'BFF'],
     github: 'https://github.com/almansorIT',
-    demo: '#',
+    demo: 'https://github.com/almansorIT/ShopLine',
     featured: true,
   },
   {
-    title: 'DevOps Automation Pipeline',
+    title: 'SkillSnap',
     description:
-      'CI/CD pipeline with Azure DevOps, Docker containerisation, and Kubernetes orchestration for automated zero-downtime deployments.',
-    tags: ['Docker', 'Kubernetes', 'Azure DevOps', 'CI/CD'],
+      'Full-stack portfolio app where users can register/login, view skills and projects, and (if they are admins) manage portfolio content. The frontend is a Blazor WebAssembly client, and the backend is an ASP.NET Core Web API with Entity Framework Core and Identity.',
+    tags: ['Blazor','REST API' ,'ASP.NET Core', 'Entity Framework Core', 'Identity'],
     github: 'https://github.com/almansorIT',
-    demo: '#',
+    demo: 'https://github.com/almansorIT/SkillSnap',
     featured: false,
   },
   {
-    title: 'E-Commerce Backend',
+    title: 'Redis Cache API',
     description:
-      'Scalable e-commerce API covering product catalogue, order management, payment integration, and real-time inventory tracking.',
-    tags: ['ASP.NET Core', 'MySQL', 'JWT', 'REST API'],
+      'ASP.NET Core API that demonstrates using Redis as a distributed cache to boost read performance and reduce load on downstream data sources.',
+    tags: ['ASP.NET Core', 'Redis', 'JWT', 'REST API'],
     github: 'https://github.com/almansorIT',
-    demo: '#',
+    demo: 'https://github.com/almansorIT/Redis',
     featured: false,
   },
   {

@@ -265,7 +265,7 @@ export default function Contact() {
         {/* Footer */}
         <div className="mt-24 pt-8 border-t border-slate-800 text-center">
           <p className="text-slate-600 text-sm font-mono">
-            Designed &amp; built by{' '}
+           
             <span className="text-slate-400">Almansoor Mukhawi</span> ·{' '}
             {new Date().getFullYear()}
           </p>
