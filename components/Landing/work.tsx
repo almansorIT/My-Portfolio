@@ -33,7 +33,7 @@ const projects = [
     title: 'ShopLine',
     description:
       'Microservices e-commerce platform using Vertical Slice Architecture, Clean architecture, Gateway, BFF. built with ASP.NET Core, featuring a Blazor WebAssembly frontend, RESTful APIs, and MySQL databases. It implements clean architecture principles and is deployed on Azure for scalability and reliability.',
-    tags: ['MySQL', 'Clean Arch', 'MongoDb', 'Azure','Microservices','Next.js','Blazor', 'Gateway', 'BFF'],
+    tags: ['MySQL', 'Clean Arch','Slice Arch','CQRS','MongoDb', 'Azure','Microservices','Next.js','Blazor', 'Gateway', 'BFF'],
     github: 'https://github.com/almansorIT',
     demo: 'https://github.com/almansorIT/ShopLine',
     featured: true,
