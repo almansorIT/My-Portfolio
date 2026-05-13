@@ -11,6 +11,9 @@ const stats = [
 
 const techStack = [
     'ASP.NET Core',
+    'Clean Architecture',
+    'Vertical Slice Architecture',
+    'Entity Framework Core',
     'C#',
     'Next.js',
     'React',

@@ -57,21 +57,21 @@ const projects = [
     featured: false,
   },
   {
-    title: 'Portfolio Website',
+    title: 'Chat-AI',
     description:
-      'Personal portfolio built with Next.js 16 and Tailwind CSS v4, featuring scroll-based animations and a clean dark design system.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS v4', 'React 19'],
+      'A conversational AI console application built with .NET 10 and the OpenAI API. The bot acts as a friendly hiking enthusiast that recommends local hikes based on user preferences, streamed in real time to the terminal.',
+    tags: ['AI', 'OpenAI API', 'Console Application', '.NET 10'],
     github: 'https://github.com/almansorIT',
-    demo: '#',
+    demo: 'https://github.com/almansorIT/Chat-AI',
     featured: false,
   },
   {
-    title: 'Auth Microservice',
+    title: 'AI Agent — Calculator Agent',
     description:
-      'Standalone authentication microservice with JWT, refresh-token rotation, role-based access control, and structured audit logging.',
-    tags: ['ASP.NET Core', 'JWT', 'MongoDB', 'Microservices'],
+      'A minimal AI agent built with Microsoft.Agents.AI and OpenAI GPT-4.1 that demonstrates tool-use (function calling) — a core pattern of agentic AI systems.',
+    tags: ['AI', 'OpenAI GPT-4.1', 'Microsoft.Agents.AI'],
     github: 'https://github.com/almansorIT',
-    demo: '#',
+    demo: 'https://github.com/almansorIT/AI-Agent',
     featured: false,
   },
 ]
