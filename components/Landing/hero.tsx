@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react'
 const roles = [
   'Full-Stack Developer',
   '.NET Engineer',
-  'Cloud Architect',
-  'DevOps Engineer',
+  'cloud-based application design',
+  'DevOps',
   'API Specialist',
 ]
 
