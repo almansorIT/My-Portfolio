@@ -23,6 +23,26 @@ const socialLinks = [
     ),
   },
   {
+    label: 'Credly',
+    href: 'https://www.credly.com/users/almansoor-mukhawi',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M12 3l7.5 4.5v9L12 21l-7.5-4.5v-9L12 3z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M12 8.25v7.5M8.25 10.5l3.75-2.25 3.75 2.25-3.75 2.25-3.75-2.25z"
+        />
+      </svg>
+    ),
+  },
+  {
     label: 'Email',
     href: 'https://outlook.live.com/mail/0/deeplink/compose?to=almansoor.it@outlook.com',
     icon: (
