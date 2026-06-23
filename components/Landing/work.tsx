@@ -66,12 +66,12 @@ const projects = [
     featured: false,
   },
   {
-    title: 'AI Agent — Calculator Agent',
+    title: 'Design Patterns',
     description:
-      'A minimal AI agent built with Microsoft.Agents.AI and OpenAI GPT-4.1 that demonstrates tool-use (function calling) — a core pattern of agentic AI systems.',
-    tags: ['AI', 'OpenAI GPT-4.1', 'Microsoft.Agents.AI'],
+      'A collection of C# implementations of common design patterns, demonstrating their usage and benefits in real-world scenarios. Each pattern is accompanied by a brief explanation and example code.',
+    tags: ['C#', 'Design Patterns', 'Software Architecture', 'GoF Patterns', 'SOLID Principles'],
     github: 'https://github.com/almansorIT',
-    demo: 'https://github.com/almansorIT/AI-Agent',
+    demo: 'https://github.com/almansorIT/DesignPatterns',
     featured: false,
   },
 ]
