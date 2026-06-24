@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22
 
       - name: Install dependencies
         run: npm ci
@@ -49,5 +49,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: Almansoor-IT
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_Almansoor }}
+          publish-profile: ${{ secrets.MYSECRET }}
           package: deploy
