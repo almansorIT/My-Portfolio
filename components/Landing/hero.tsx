@@ -165,7 +165,7 @@ export default function Hero() {
           >
             <Image
               src="/assets/photo_2026.webp"
-              alt="Almansoor-Mukhawi"
+              alt="Almansoor Mukhawi"
               width={208}
               height={208}
               priority
