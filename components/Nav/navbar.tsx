@@ -80,13 +80,35 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA button — desktop */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center gap-2 border border-slate-700 text-slate-300 text-sm font-medium px-4 py-1.5 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-200"
-        >
-          Hire Me
-        </a>
+        {/* CTA buttons — desktop */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="/assets/MyC.v.pdf"
+            download
+            className="inline-flex items-center gap-2 border border-slate-700 text-slate-300 text-sm font-medium px-4 py-1.5 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-200"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"
+              />
+            </svg>
+            My C.V
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 border border-slate-700 text-slate-300 text-sm font-medium px-4 py-1.5 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-200"
+          >
+            Hire Me
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -138,7 +160,28 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
-            <li>
+            <li className="flex items-center gap-3">
+              <a
+                href="/assets/MyC.v.pdf"
+                download
+                onClick={() => setMenuOpen(false)}
+                className="inline-flex items-center gap-2 border border-slate-700 text-slate-300 text-sm font-medium px-4 py-1.5 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-200"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"
+                  />
+                </svg>
+                My C.V
+              </a>
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
