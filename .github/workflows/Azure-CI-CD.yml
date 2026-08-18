@@ -8,6 +8,14 @@ on:
       - "**"
       - ".github/workflows/Azure-CI-CD.yml"
 
+permissions:
+  id-token: write
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -16,38 +24,38 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Compute lowercase image name
+        id: image
+        run: echo "name=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
         with:
-          node-version: 22
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        run: npm run build
-
-      - name: Prepare artifact for deployment
-        run: |
-          mkdir -p deploy
-          # Copy standalone server + minimal node_modules
-          cp -r .next/standalone/. deploy/
-          # Copy required static assets (must sit beside server.js)
-          cp -r .next/static deploy/.next/static
-          cp -r public deploy/public
-
-      - name: Verify deployment artifact
-        run: |
-          test -f deploy/server.js
-          test -d deploy/node_modules
-          test -d deploy/public
-          test -d deploy/.next/static
-          echo "Artifact structure:"
-          find deploy -maxdepth 2 -type d
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
+      - name: Build and push image
+        uses: docker/build-push-action@v6
         with:
-          app-name: Almansoor-IT
-          publish-profile: ${{ secrets.MYSECRET }}
-          package: deploy
+          context: .
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:latest
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Deploy to Azure Container Apps
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az containerapp update \
+              --name ${{ secrets.AZURE_CONTAINERAPP_NAME }} \
+              --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+              --image ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ github.sha }}
